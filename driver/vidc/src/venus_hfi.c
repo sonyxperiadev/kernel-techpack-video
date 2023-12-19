@@ -2434,7 +2434,7 @@ static int __load_fw_to_memory(struct platform_device *pdev,
 	phys = res.start;
 	res_size = (size_t)resource_size(&res);
 
-	rc = request_firmware(&firmware, firmware_name, &pdev->dev);
+	rc = request_firmware_direct(&firmware, firmware_name, &pdev->dev);
 	if (rc) {
 		d_vpr_e("%s: failed to request fw \"%s\", error %d\n",
 			__func__, firmware_name, rc);
